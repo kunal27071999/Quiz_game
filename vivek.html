@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<style>
+/*input[type ='radio']{
+	height
+}*/
+input{
+	margin-left:30px;
+}
+
+p{
+	font-size:20px;
+	font-weight:bold;
+}
+
+</style>
+	
+	<script>
+		$(function(){
+			$("#q1").css({"color":"#4a5f82"});
+			$("#b,#c").hide();
+		});
+
+		$(function(){
+			$("#q1").click(function(){
+				$("#a").show();
+				$("#b,#c").hide();
+				
+			});
+
+		});
+
+		$(function(){
+			$("#q2").click(function(){
+				$("#b").show();
+				 $("#q2").css({"color":"#4a5f82"});
+				// $("#q1,#q3").css({"color":"#2e3238"});
+				$("#a,#c").hide();
+			});
+		});
+
+		$(function(){
+			$("#q3").click(function(){
+				$("#c").show();
+				// $("#q2,#q1").css({"color":"#2e3238"});
+				 $("#q3").css({"color":"#4a5f82"});
+				$("#b,#a").hide();
+			});
+		});
+
+
+	function test(){
+		var x = document.getElementById("asw");
+		var y = document.getElementById("asw1");
+		var w = document.getElementById("asw2");
+		var z = document.getElementById("asw3");
+			alert(x);
+			alert(y);
+			alert(w);
+			alert(z);
+		
+		document.getElementById("q1").innerHTML = "Attempted";
+		document.getElementById("q1").style.color ="green";
+	}
+
+	function test2(){
+		document.getElementById("q2").innerHTML ="Attempted";
+		document.getElementById("q2").style.color ="green";
+
+	}
+
+	function test3(){
+		document.getElementById("q3").innerHTML ="Attempted";
+		document.getElementById("q3").style.color ="green";
+
+	}
+	</script>
+</head>
+
+
+<body style = "background-image:url('mod.jpg');background-size:cover;">	
+	<div class = "row">
+		<div class = "col-1"></div>
+
+		<div class = "col-10">
+			
+<h2 class = "jumbotron bg-info rounded" style = "margin-top:60px;text-shadow: 1px 1px 2px white, 0 0 25px blue, 0 0 5px darkblue;"><center>Fastest Finger First</center></h2>
+		<div class = "card container" style = "margin-top:-32px;">
+			<div class = "row" >
+				<div class = "col-2.5 card">
+
+			<h4 class = "container" style = "margin-top:40px;cursor:pointer;" id = "q1">Question 1</h4>
+			<hr>
+			<h4 class = "container" id = "q2" style = "cursor:pointer;">Question 2</h4>
+			<hr>
+			<h4 class = "container" id ="q3" style ="cursor:pointer;">Question 3</h4>
+			<hr>
+			<h4 class = "container" class = "container" id ="q3" style ="cursor:pointer;">Question 3</h4>
+					
+
+
+		</div>
+		<div class = "col-1"></div>
+		<div class = "col-8"style = "margin-top:40px;">
+
+			<p id ="a">Q1) Hottest Planet in solar system is:- <br><br>
+				<form method="post">
+					<input type ="radio" onclick="test();" name ="ans" value ="venus"> Venus.<br><br>  
+					<input type ="radio" onclick="test();" name = "ans" value ="Earth"> Earth.<br><br> 
+					<input type ="radio" onclick="test();" name = "ans" value ="Sun"> Sun.<br><br> 
+					<input type ="radio" onclick ="test();" name = "ans" value ="Mercury"> Mercury.</p>
+					<?php
+
+					if(isset($_POST['radio'])){
+						$ans1 = $_POST['ans'];
+						echo "<script>alert($ans1);</script>";
+					}
+
+					?>
+				</form>
+			 <p id ="b">Q2) Hottest Planet in solar system is:- <br><br> 
+			 	<input type ='radio' onclick="test2();" name ='ans' value ='venus'> Venus.<br><br>  
+			 	<input type ='radio' onclick="test2();" name = 'ans' value ='Earth'> Earth.<br><br> 
+			 	<input type ='radio' onclick="test2();" name = 'ans' value ='Sun'> Sun.<br><br> 
+			 	<input type ='radio' onclick="test2();" name = 'ans' value ='Mercury'> Mercury.</p>
+
+			<p id ="c"> Q3) Hottest Planet in solar system is:- <br><br> 
+				<input type ='radio' onclick="test3();" name ='ans' value ='venus'> Venus.<br><br>  
+				<input type ='radio' onclick ="test3();" name = 'ans' value ='Earth'> Earth.<br><br> 
+				<input type ='radio' onclick="test3();" name = 'ans' value ='Sun'> Sun.<br><br> 
+				<input type ='radio' onclick="test3();" name = 'ans' value ='Mercury'> Mercury.</p>
+
+
+		</div>
+	</div>
+</div>
+	</div>
+</div></div>
+
+</body>
+</html>
